@@ -1,0 +1,27 @@
+version: "3.8"
+services:
+  mongodb:
+    container_name: mongo
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+
+  backend:
+      container_name: backend
+      build: ./backend
+#     env_file:
+#        - ./backend/.env.sample
+      
+      ports:
+        - "3000:5000"
+        
+  frontend:
+      container_name: frontend
+      build: ./frontend
+#     env_file:
+#        - ./backend/.env.sample
+
+      ports:
+        - "5173:5173"
+
+
