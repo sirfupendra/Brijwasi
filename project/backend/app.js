@@ -45,9 +45,10 @@ app.use('/booking', bookingRoutes);
 app.post('/pgateway', (req, res) => {
     const { amount } = req.body;
     console.log(amount);
-    res.status(200).json({ message: 'Payment successful' });
+    res.status(201).json({ message: 'Payment successful' });
 });
 
 server.listen(port, () => {
     console.log(`Server is running on port ${port}`);
 });
+
